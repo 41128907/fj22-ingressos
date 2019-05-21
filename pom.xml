@@ -149,5 +149,11 @@
             </plugin>
         </plugins>
     </build>
-
+	
+	<developers>
+		<developer>
+			<name>John</name>
+			<email>john@email.com</email>
+		</developer>
+	</developers>
 </project>

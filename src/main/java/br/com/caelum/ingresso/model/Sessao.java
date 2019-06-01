@@ -1,6 +1,7 @@
 package br.com.caelum.ingresso.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalTime;
 
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import br.com.caelum.ingresso.utils.PrecoUtil;
 
 @Entity
 public class Sessao {
@@ -69,7 +72,7 @@ public class Sessao {
 	}
 
 	public BigDecimal getPreco() {
-		return preco;
+		return PrecoUtil.verificaPreco(preco);
 	}
 
 	public void setPreco(BigDecimal preco) {

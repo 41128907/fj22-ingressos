@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import br.com.caelum.ingresso.utils.PrecoUtil;
+
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Duration;
 
 /**
@@ -69,7 +72,7 @@ public class Filme {
     }
 
 	public BigDecimal getPreco() {
-		return preco;
+		return PrecoUtil.verificaPreco(preco);
 	}
 
 	public void setPreco(BigDecimal preco) {

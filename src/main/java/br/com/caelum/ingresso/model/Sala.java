@@ -2,7 +2,10 @@ package br.com.caelum.ingresso.model;
 
 import javax.persistence.*;
 
+import br.com.caelum.ingresso.utils.PrecoUtil;
+
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -78,7 +81,7 @@ public class Sala {
     }
 
 	public BigDecimal getPreco() {
-		return preco;
+		return PrecoUtil.verificaPreco(preco);
 	}
 
 	public void setPreco(BigDecimal preco) {
